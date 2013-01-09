@@ -37,15 +37,15 @@ class donator_tele_commandscript : public CommandScript{
         {
             static ChatCommand donTeleCommandTable[] =
             {
-                { "Orgrimmar", SEC_DONATOR, false, HandleDonTeleOgCommand, "Teleports to Orgrimmar", NULL},
-                { "Undercity", SEC_DONATOR, false, HandleDonTeleUcCommand, "Teleports to Undercity", NULL},
-                { "Silvermoon", SEC_DONATOR, false, HandleDonTeleSmCommand, "Teleports to Silvermoon", NULL},
-                { "Thunderbluff", SEC_DONATOR, false, HandleDonTeleTbCommand, "Teleports to Thunderbluff", NULL},
-                { "Dalaran", SEC_DONATOR, false, HandleDonTeleDalaCommand, "Teleports to Dalaran", NULL},
-                { "Stormwind", SEC_DONATOR, false, HandleDonTeleSwCommand, "Teleports to Stormwind", NULL},
-                { "Ironforge", SEC_DONATOR, false, HandleDonTeleIfCommand, "Teleports to Ironforge", NULL},
-                { "Darnassus", SEC_DONATOR, false, HandleDonTeleDsCommand, "Teleports to Darnassus", NULL},
-                { "Exodar", SEC_DONATOR, false, HandleDonTeleExCommand, "Teleports to Exodar", NULL}
+                { "Orgrimmar",    SEC_DONATOR, false, HandleDonTeleOgCommand,  "Teleports to Orgrimmar",    NULL},
+                { "Undercity",    SEC_DONATOR, false, HandleDonTeleUcCommand,  "Teleports to Undercity",    NULL},
+                { "Silvermoon",   SEC_DONATOR, false, HandleDonTeleSmCommand,  "Teleports to Silvermoon",   NULL},
+                { "Thunderbluff", SEC_DONATOR, false, HandleDonTeleTbCommand,  "Teleports to Thunderbluff", NULL},
+                { "Dalaran",      SEC_DONATOR, false, HandleDonTeleDalaCommand,"Teleports to Dalaran",      NULL},
+                { "Stormwind",    SEC_DONATOR, false, HandleDonTeleSwCommand   "Teleports to Stormwind",    NULL},
+                { "Ironforge",    SEC_DONATOR, false, HandleDonTeleIfCommand,  "Teleports to Ironforge",    NULL},
+                { "Darnassus",    SEC_DONATOR, false, HandleDonTeleDsCommand,  "Teleports to Darnassus",    NULL},
+                { "Exodar",       SEC_DONATOR, false, HandleDonTeleExCommand,  "Teleports to Exodar",       NULL}
 
 
             };
@@ -72,9 +72,15 @@ class donator_tele_commandscript : public CommandScript{
 
     static bool HandleDonTeleOgCommand(ChatHandler* handler, const char* args)
     {
-
+        
         Player* player = handler->GetSession()->GetPlayer();
 
+        if(!player->IsPremium())
+        {
+            
+        return false;    
+        }
+        
         if (player->isInCombat())
         {
             handler->SendSysMessage(LANG_YOU_IN_COMBAT);
@@ -100,7 +106,11 @@ class donator_tele_commandscript : public CommandScript{
 
 
         Player* player = handler->GetSession()->GetPlayer();
-
+        if(!player->IsPremium())
+        {
+            
+        return false;    
+        }
         if (player->isInCombat())
         {
             handler->SendSysMessage(LANG_YOU_IN_COMBAT);
@@ -127,6 +137,11 @@ class donator_tele_commandscript : public CommandScript{
 
         Player* player = handler->GetSession()->GetPlayer();
 
+        if(!player->IsPremium())
+        { 
+        return false;    
+        }
+        
         if (player->isInCombat())
         {
             handler->SendSysMessage(LANG_YOU_IN_COMBAT);
@@ -151,7 +166,12 @@ class donator_tele_commandscript : public CommandScript{
     {
 
         Player* player = handler->GetSession()->GetPlayer();
-
+        
+        if(!player->IsPremium())
+        {    
+        return false;    
+        }
+        
         if (player->isInCombat())
         {
             handler->SendSysMessage(LANG_YOU_IN_COMBAT);
@@ -177,7 +197,12 @@ class donator_tele_commandscript : public CommandScript{
 
 
         Player* player = handler->GetSession()->GetPlayer();
-
+        
+        if(!player->IsPremium())
+        {         
+        return false;    
+        }
+        
         if (player->isInCombat())
         {
             handler->SendSysMessage(LANG_YOU_IN_COMBAT);
@@ -198,7 +223,12 @@ class donator_tele_commandscript : public CommandScript{
 
 
         Player* player = handler->GetSession()->GetPlayer();
-
+        
+        if(!player->IsPremium())
+        {   
+        return false;    
+        }
+        
         if (player->isInCombat())
         {
             handler->SendSysMessage(LANG_YOU_IN_COMBAT);
@@ -224,7 +254,12 @@ class donator_tele_commandscript : public CommandScript{
 
 
         Player* player = handler->GetSession()->GetPlayer();
-
+        
+        if(!player->IsPremium())
+        {   
+        return false;    
+        }
+        
         if (player->isInCombat())
         {
             handler->SendSysMessage(LANG_YOU_IN_COMBAT);
@@ -250,7 +285,12 @@ class donator_tele_commandscript : public CommandScript{
 
 
         Player* player = handler->GetSession()->GetPlayer();
-
+        
+        if(!player->IsPremium())
+        {   
+        return false;    
+        }
+        
         if (player->isInCombat())
         {
             handler->SendSysMessage(LANG_YOU_IN_COMBAT);
@@ -277,7 +317,12 @@ class donator_tele_commandscript : public CommandScript{
 
 
         Player* player = handler->GetSession()->GetPlayer();
-
+        
+        if(!player->IsPremium())
+        {   
+        return false;    
+        }
+        
         if (player->isInCombat())
         {
             handler->SendSysMessage(LANG_YOU_IN_COMBAT);
