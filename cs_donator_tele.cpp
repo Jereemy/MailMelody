@@ -346,5 +346,5 @@ class donator_tele_commandscript : public CommandScript{
 
 void AddSC_donator_tele_commandscript()
 {
-    new donator_tele_commandscript();
+    new donator_tele_commandscript()
 }
